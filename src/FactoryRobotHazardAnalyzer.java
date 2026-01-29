@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// UC5: Entry point class
+// UC6: Entry point with exception handling
 public class FactoryRobotHazardAnalyzer {
 
     public static void main(String[] args) {
@@ -15,14 +15,21 @@ public class FactoryRobotHazardAnalyzer {
         System.out.print("Enter Worker Density (1 - 20): ");
         int workerDensity = scanner.nextInt();
 
-        // UC5: Call auditor method
-        double riskScore =
-                RobotHazardAuditor.calculateHazardRisk(
-                        armPrecision,
-                        workerDensity
-                );
+        try {
+            double riskScore =
+                    RobotHazardAuditor.calculateHazardRisk(
+                            armPrecision,
+                            workerDensity
+                    );
 
-        System.out.println("Robot Hazard Risk Score: " + riskScore);
+            System.out.println(
+                    "Robot Hazard Risk Score: " + riskScore
+            );
+
+        } catch (RobotSafetyException e) {
+            // UC6: Exception itself displays message
+            System.out.println(e.getMessage());
+        }
 
         scanner.close();
     }
