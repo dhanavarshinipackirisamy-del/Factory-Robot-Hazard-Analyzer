@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// UC7: Entry point class
+// UC8: Entry point class
 public class FactoryRobotHazardAnalyzer {
 
     public static void main(String[] args) {

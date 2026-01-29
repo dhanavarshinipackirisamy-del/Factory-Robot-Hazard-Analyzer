@@ -1,4 +1,4 @@
-// UC7: Business logic with machinery state mapping
+// UC8: Fully modular business logic class
 public class RobotHazardAuditor {
 
     public static double calculateHazardRisk(
@@ -21,7 +21,7 @@ public class RobotHazardAuditor {
             );
         }
 
-        // UC7: Machinery state risk mapping
+        // Machinery state risk mapping
         double machineRiskFactor;
 
         if (machineryState.equals("Worn")) {
